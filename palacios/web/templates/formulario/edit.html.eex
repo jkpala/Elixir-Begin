@@ -1,0 +1,6 @@
+<h2>Edit formulario</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: formulario_path(@conn, :update, @formulario) %>
+
+<%= link "Back", to: formulario_path(@conn, :index) %>

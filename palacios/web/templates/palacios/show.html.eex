@@ -1,0 +1,28 @@
+<h2>Show palacios</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @palacios.name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @palacios.email %>
+  </li>
+
+  <li>
+    <strong>Bio:</strong>
+    <%= @palacios.bio %>
+  </li>
+
+  <li>
+    <strong>Number of pets:</strong>
+    <%= @palacios.number_of_pets %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: palacios_path(@conn, :edit, @palacios) %>
+<%= link "Back", to: palacios_path(@conn, :index) %>

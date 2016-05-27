@@ -1,0 +1,28 @@
+<h2>Show formulario</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @formulario.name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @formulario.email %>
+  </li>
+
+  <li>
+    <strong>Bio:</strong>
+    <%= @formulario.bio %>
+  </li>
+
+  <li>
+    <strong>Number of pets:</strong>
+    <%= @formulario.number_of_pets %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: formulario_path(@conn, :edit, @formulario) %>
+<%= link "Back", to: formulario_path(@conn, :index) %>

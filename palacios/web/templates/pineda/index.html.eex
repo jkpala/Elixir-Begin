@@ -1,0 +1,32 @@
+<h2>Listing pineda</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Bio</th>
+      <th>Number of pets</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for pineda <- @pineda do %>
+    <tr>
+      <td><%= pineda.name %></td>
+      <td><%= pineda.email %></td>
+      <td><%= pineda.bio %></td>
+      <td><%= pineda.number_of_pets %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: pineda_path(@conn, :show, pineda), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: pineda_path(@conn, :edit, pineda), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: pineda_path(@conn, :delete, pineda), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New pineda", to: pineda_path(@conn, :new) %>

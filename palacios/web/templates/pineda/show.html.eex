@@ -1,0 +1,28 @@
+<h2>Show pineda</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @pineda.name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @pineda.email %>
+  </li>
+
+  <li>
+    <strong>Bio:</strong>
+    <%= @pineda.bio %>
+  </li>
+
+  <li>
+    <strong>Number of pets:</strong>
+    <%= @pineda.number_of_pets %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: pineda_path(@conn, :edit, @pineda) %>
+<%= link "Back", to: pineda_path(@conn, :index) %>

@@ -1,0 +1,32 @@
+<h2>Listing formulario</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Bio</th>
+      <th>Number of pets</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for formulario <- @formulario do %>
+    <tr>
+      <td><%= formulario.name %></td>
+      <td><%= formulario.email %></td>
+      <td><%= formulario.bio %></td>
+      <td><%= formulario.number_of_pets %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: formulario_path(@conn, :show, formulario), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: formulario_path(@conn, :edit, formulario), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: formulario_path(@conn, :delete, formulario), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New formulario", to: formulario_path(@conn, :new) %>

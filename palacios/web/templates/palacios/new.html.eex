@@ -1,0 +1,6 @@
+<h2>New palacios</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: palacios_path(@conn, :create) %>
+
+<%= link "Back", to: palacios_path(@conn, :index) %>

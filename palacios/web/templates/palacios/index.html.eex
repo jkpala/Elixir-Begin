@@ -1,0 +1,32 @@
+<h2>Listing palacios</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Bio</th>
+      <th>Number of pets</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for palacios <- @palacios do %>
+    <tr>
+      <td><%= palacios.name %></td>
+      <td><%= palacios.email %></td>
+      <td><%= palacios.bio %></td>
+      <td><%= palacios.number_of_pets %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: palacios_path(@conn, :show, palacios), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: palacios_path(@conn, :edit, palacios), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: palacios_path(@conn, :delete, palacios), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New palacios", to: palacios_path(@conn, :new) %>

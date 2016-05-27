@@ -1,0 +1,6 @@
+<h2>New pineda</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: pineda_path(@conn, :create) %>
+
+<%= link "Back", to: pineda_path(@conn, :index) %>
